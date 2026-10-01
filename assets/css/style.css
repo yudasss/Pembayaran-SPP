@@ -1,0 +1,295 @@
+:root {
+    --navy: #14304a;
+    --navy-terang: #1d4266;
+    --biru: #1d5f8a;
+    --biru-gelap: #164b6e;
+    --amber: #f4b942;
+    --latar: #f3f5f7;
+    --garis: #d9dee4;
+    --teks: #1f2933;
+    --teks-redup: #667085;
+    --hijau: #166534;
+    --hijau-muda: #dcfce7;
+    --merah: #b42318;
+    --merah-muda: #fee4e2;
+}
+
+body {
+    font-family: 'Public Sans', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
+    font-size: 14px;
+    color: var(--teks);
+    background: var(--latar);
+}
+
+/* ---------- sidebar ---------- */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 220px;
+    background: var(--navy);
+    padding: 18px 12px;
+    overflow-y: auto;
+}
+
+.sidebar .merek {
+    padding: 4px 8px 16px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, .15);
+}
+
+.sidebar .merek b {
+    display: block;
+    color: #fff;
+    font-size: 16px;
+    line-height: 1.2;
+}
+
+.sidebar .merek span {
+    color: #9fb3c8;
+    font-size: 12px;
+}
+
+.sidebar a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #c9d6e3;
+    text-decoration: none;
+    padding: 9px 10px;
+    margin-bottom: 2px;
+    border-left: 3px solid transparent;
+    border-radius: 0 4px 4px 0;
+}
+
+.sidebar a i {
+    font-size: 16px;
+    width: 18px;
+    text-align: center;
+}
+
+.sidebar a:hover {
+    background: var(--navy-terang);
+    color: #fff;
+}
+
+.sidebar a.aktif {
+    background: rgba(255, 255, 255, .13);
+    border-left-color: var(--amber);
+    color: #fff;
+    font-weight: 600;
+}
+
+/* ---------- area isi ---------- */
+.isi {
+    margin-left: 220px;
+    padding: 0 28px 28px;
+    min-height: 100vh;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 -28px 22px;
+    padding: 12px 28px;
+    background: #fff;
+    border-bottom: 1px solid var(--garis);
+    font-size: 13px;
+    color: var(--teks-redup);
+}
+
+.judul-halaman {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--navy);
+}
+
+/* ---------- tabel ---------- */
+.table-responsive {
+    background: #fff;
+    border: 1px solid var(--garis);
+    border-radius: 6px;
+}
+
+.table-responsive .table {
+    margin-bottom: 0;
+}
+
+.table > :not(caption) > * > * {
+    padding: 9px 12px;
+    border-color: #e6eaee;
+}
+
+.table th {
+    background: #eaf0f5 !important;
+    color: var(--navy);
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.table tbody tr:hover > * {
+    background: #f7fafc;
+}
+
+.table-bordered > :not(caption) > * {
+    border-width: 0 0 1px;
+}
+
+.table-bordered > :not(caption) > * > * {
+    border-width: 0;
+}
+
+/* tabel kecil di dalam kartu (hasil cek NISN) */
+.card .table-bordered > :not(caption) > * > * {
+    border-width: 0 0 1px;
+}
+
+/* ---------- status ---------- */
+.lunas,
+.belum {
+    display: inline-block;
+    padding: 2px 9px;
+    border-radius: 4px;
+    font-size: 12.5px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.lunas {
+    background: var(--hijau-muda);
+    color: var(--hijau);
+}
+
+.belum {
+    background: var(--merah-muda);
+    color: var(--merah);
+}
+
+/* ---------- kartu & form ---------- */
+.card {
+    border: 1px solid var(--garis);
+    border-radius: 6px;
+    box-shadow: none;
+}
+
+.form-kecil {
+    max-width: 540px;
+}
+
+.form-label {
+    font-weight: 600;
+    font-size: 13px;
+    margin-bottom: 4px;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--biru);
+    box-shadow: 0 0 0 3px rgba(29, 95, 138, .15);
+}
+
+.form-control[readonly] {
+    background: #eef1f4;
+}
+
+/* tombol utama */
+.btn-secondary {
+    background: var(--biru);
+    border-color: var(--biru);
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+    background: var(--biru-gelap);
+    border-color: var(--biru-gelap);
+}
+
+.btn-outline-secondary {
+    color: var(--teks);
+    border-color: var(--garis);
+    background: #fff;
+}
+
+.btn-outline-secondary:hover {
+    background: #eef1f4;
+    color: var(--teks);
+    border-color: #b8c0c9;
+}
+
+/* tombol hapus berwarna merah supaya beda dengan edit */
+button[name="hapus"] {
+    color: var(--merah);
+}
+
+button[name="hapus"]:hover {
+    background: var(--merah-muda);
+    color: var(--merah);
+    border-color: #f1aeaa;
+}
+
+/* ---------- dashboard ---------- */
+.kartu-angka {
+    background: #fff;
+    border: 1px solid var(--garis);
+    border-left-width: 5px;
+    border-radius: 6px;
+    padding: 14px 16px;
+}
+
+.kartu-angka .label {
+    color: var(--teks-redup);
+}
+
+.kartu-angka .angka {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-top: 2px;
+}
+
+.kartu-angka .ket {
+    font-size: 12.5px;
+    color: var(--teks-redup);
+}
+
+.kartu-angka.hijau { border-left-color: #22a55b; }
+.kartu-angka.merah { border-left-color: #d9473d; }
+.kartu-angka.biru  { border-left-color: var(--biru); }
+
+.progress {
+    height: 10px;
+    background: #e4e9ee;
+}
+
+.progress-bar {
+    background: #22a55b;
+}
+
+@media (max-width: 700px) {
+    .sidebar {
+        position: static;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+        padding: 12px;
+    }
+    .sidebar .merek {
+        width: 100%;
+    }
+    .sidebar a {
+        margin: 0;
+        border-left: 0;
+        border-radius: 4px;
+    }
+    .isi {
+        margin-left: 0;
+        padding: 0 14px 20px;
+    }
+    .topbar {
+        margin: 0 -14px 16px;
+        padding: 10px 14px;
+    }
+}
